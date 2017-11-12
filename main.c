@@ -12,14 +12,13 @@ char** parse_args(char* yeah)
 {
 	char * yeahcpy = (char *)malloc(sizeof(yeah));
 	strcpy(yeahcpy,yeah);
-
-	char **arr = (char**) malloc(sizeof *arr * N); 
+	char **arr = (char**) malloc(sizeof *arr * 128); 
 	if (arr)
 	{
 	  int i = 0;
 	  while(yeahcpy!=NULL)
 	  {
-	    arr[i] = malloc(sizeof *arr[i] * (LENGTH + 1));
+	    arr[i] = malloc(sizeof *arr[i] * 128);
 	    printf("yeahcpy is %s\n",yeahcpy );
 	    strcpy(arr[i], strsep(&yeahcpy," ")); 
 	    printf("arr[%d] is %s\n",i,arr[i] );
